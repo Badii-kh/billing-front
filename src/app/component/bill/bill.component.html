@@ -1,0 +1,9 @@
+<h1>Facture [{{this.command?.id}}]</h1>
+<ul>
+    <li *ngFor="let item of command?.items">{{item.quantity}} {{item.product?.name}} à {{item.product?.price}}€: {{item.priceTTC}}€</li>
+</ul>
+
+<h3>Montant des taxes: {{command?.totalTax | number: '1.2-2'}}€</h3>
+<h3>Total: {{command?.totalTTC | number: '1.2-2'}}€</h3>
+
+<button (click)="onPrint()">Print</button>
